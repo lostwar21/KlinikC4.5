@@ -71,7 +71,9 @@ XAMPP adalah paket yang berisi Apache (web server) + MySQL (database) + PHP, sem
 
 ## LANGKAH 2: SALIN FILE PROYEK
 
-### 2.1 Copy Folder Proyek
+Ada dua cara untuk memasukkan file ke laptop:
+
+### 2.1 Opsi A: Salin Manual (Copy-Paste)
 1. Copy seluruh folder `project_skripsi` ke dalam folder htdocs XAMPP:
    ```
    C:\xampp\htdocs\
@@ -81,22 +83,34 @@ XAMPP adalah paket yang berisi Apache (web server) + MySQL (database) + PHP, sem
    C:\xampp\htdocs\project_skripsi\
    ```
 
-### 2.2 Verifikasi Struktur Folder
+### 2.2 Opsi B: Menggunakan Git Clone (Cara Cepat)
+Jika laptop klien sudah terinstall **Git**, gunakan cara ini agar lebih praktis:
+1. Buka **Command Prompt** atau **Terminal**.
+2. Masuk ke folder htdocs:
+   ```cmd
+   cd C:\xampp\htdocs
+   ```
+3. Jalankan perintah clone:
+   ```bash
+   git clone https://github.com/roveradmin1st/KlinikC4.5.git project_skripsi
+   ```
+
+### 2.3 Verifikasi Struktur Folder
 Pastikan di dalam `C:\xampp\htdocs\project_skripsi\` terdapat file-file ini:
 
 ```
 C:\xampp\htdocs\project_skripsi\
-├── application\        ← (folder, berisi controllers, models, views, dll)
-├── assets\             ← (folder, berisi css dan img)
-├── system\             ← (folder, core CodeIgniter)
-├── database.sql        ← (FILE INI SANGAT PENTING)
-├── index.php           ← (entry point)
-└── .htaccess           ← (mungkin tersembunyi)
+├── application\        ← (folder utama)
+├── assets\             ← (folder css/img)
+├── system\             ← (folder core CI)
+├── database.sql        ← (FILE DATABASE)
+├── README.md           ← (dokumentasi proyek)
+└── .htaccess           ← (konfigurasi URL)
 ```
 
 > [!CAUTION]
-> Jika file `database.sql` tidak ada di folder tersebut, sistem tidak bisa dibuat.
-> Pastikan file ini ikut tercopy.
+> Jika file `database.sql` tidak ada di folder tersebut, sistem tidak bisa dijalankan.
+> Pastikan file ini ada sebelum lanjut ke Langkah 3.
 
 ✅ **Jika folder sudah benar, lanjut ke Langkah 3.**
 
