@@ -18,7 +18,7 @@ class Auth extends CI_Controller {
         if ($this->session->userdata('logged_in')) {
             redirect('dashboard');
         }
-        $data['title'] = "Sistem Klasifikasi Rekam Medis - Praktik Gigi Mandiri Esensiil";
+        $data['title'] = "Sistem Klasifikasi Rekam Medis - RSGM USU";
         $this->load->view('auth/login', $data);
     }
 

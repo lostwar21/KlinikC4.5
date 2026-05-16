@@ -19,7 +19,7 @@
                 </div>
                 <div class="row mb-2">
                     <div class="col-md-3 fw-semibold text-secondary">Jumlah Record</div>
-                    <div class="col-md-9">: <span class="badge bg-teal fw-bold" style="font-size: 0.9rem;"><?php echo $actual_record_count; ?></span> record aktif</div>
+                    <div class="col-md-9">: <span class="badge fw-bold" style="background-color: #0d9488; color: white; font-size: 0.9rem; padding: 0.4em 0.8em;"><?php echo $actual_record_count; ?></span> record aktif</div>
                 </div>
                 <div class="row mb-2">
                     <div class="col-md-3 fw-semibold text-secondary">Jumlah Atribut</div>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="row mb-0">
                     <div class="col-md-3 fw-semibold text-secondary">Target</div>
-                    <div class="col-md-9">: Tindakan_Perawatan (5 kelas)</div>
+                    <div class="col-md-9">: Tindakan (6 kelas spesialisasi)</div>
                 </div>
             </div>
         </div>

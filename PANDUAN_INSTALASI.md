@@ -1,6 +1,6 @@
 # 📦 PANDUAN INSTALASI SISTEM
 # Klasifikasi Keluhan Rekam Medis Pasien — Algoritma C4.5
-### Praktik Gigi Mandiri Esensiil
+### Rumah Sakit Gigi dan Mulut USU
 
 > [!IMPORTANT]
 > Ikuti setiap langkah secara **berurutan** dari awal sampai akhir.
@@ -80,7 +80,7 @@ Ada dua cara untuk memasukkan file ke laptop:
    ```
 2. Hasilnya harus terbentuk path seperti ini:
    ```
-   C:\xampp\htdocs\project_skripsi\
+   C:\xampp\htdocs\66\
    ```
 
 ### 2.2 Opsi B: Menggunakan Git Clone (Cara Cepat)
@@ -228,7 +228,7 @@ VALUES ('pemilik', 'pemilik', 'Dr. Pemilik Klinik', 'pemilik', 'aktif');
    ```
    http://localhost/project_skripsi/
    ```
-4. Halaman **Login** akan muncul dengan logo Praktik Gigi Mandiri Esensiil
+4. Halaman **Login** akan muncul dengan logo Rumah Sakit Gigi dan Mulut USU
 
 ### 5.2 Login dengan Akun Uji Coba
 

@@ -38,13 +38,12 @@
                         <div class="mb-3">
                             <label class="form-label fw-bold">Keluhan Utama</label>
                             <select name="keluhan_utama" class="form-select border-secondary" required style="border-radius:0;">
-                                <option value="Karies Gigi">Karies Gigi</option>
-                                <option value="Abses Gigi">Abses Gigi</option>
-                                <option value="Gingivitis">Gingivitis</option>
-                                <option value="Pulpitis">Pulpitis</option>
-                                <option value="Persistensi">Persistensi</option>
-                                <option value="Gigi Sensitif">Gigi Sensitif</option>
-                                <option value="Karang Gigi">Karang Gigi</option>
+                                <option value="K1">K1 - Nyeri Gigi</option>
+                                <option value="K2">K2 - Kelainan Jaringan Pendukung Gigi (Periodontal)</option>
+                                <option value="K3">K3 - Kelainan Susunan Gigi dan Rahang (Ortodontik)</option>
+                                <option value="K4">K4 - Kelainan yang Memerlukan Tindakan Bedah</option>
+                                <option value="K5">K5 - Kehilangan Gigi atau Kerusakan Mahkota Gigi</option>
+                                <option value="K6">K6 - Kelainan Rongga Mulut Lainnya</option>
                             </select>
                         </div>
 
@@ -52,10 +51,7 @@
                             <label class="form-label fw-bold">Riwayat Penyakit</label>
                             <select name="riwayat_penyakit" class="form-select border-secondary" required style="border-radius:0;">
                                 <option value="Tidak Ada">Tidak Ada</option>
-                                <option value="Hipertensi">Hipertensi</option>
-                                <option value="Diabetes">Diabetes</option>
-                                <option value="Asma">Asma</option>
-                                <option value="Alergi Obat">Alergi Obat</option>
+                                <option value="Ada">Ada</option>
                             </select>
                         </div>
 
@@ -89,7 +85,7 @@
 
                 <div class="text-center p-4 bg-light shadow-sm border border-secondary" style="border-radius: 0;">
                     <p class="text-muted text-uppercase fw-bold small mb-2">Saran Tindakan Medis (C4.5):</p>
-                    <h2 class="fw-black text-dark-teal mb-0" id="predLabel">T1 - Penambalan</h2>
+                    <h2 class="fw-black text-dark-teal mb-0" id="predLabel">T1 - Konservasi</h2>
                     <hr class="my-3 border-secondary opacity-25">
                     <p class="mb-0 small text-secondary">Akurasi Model Terakhir: <span class="fw-bold"><?php echo isset($latest_model) ? number_format($latest_model['akurasi'], 2) : '0'; ?>%</span></p>
                 </div>

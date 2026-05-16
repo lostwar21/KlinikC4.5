@@ -75,7 +75,15 @@
                 <label class="fw-bold">Keluhan Utama :</label>
             </div>
             <div class="col-md-9">
-                <input type="text" name="keluhan_utama" class="form-control border-secondary" placeholder="xxxxxxxxxxxxxxxxxxxxxxx" required style="border-radius: 0;">
+                <select name="keluhan_utama" class="form-select border-secondary" required style="border-radius: 0;">
+                    <option value="">-- Pilih Keluhan Utama --</option>
+                    <option value="K1">K1 - Nyeri Gigi</option>
+                    <option value="K2">K2 - Kelainan Jaringan Pendukung Gigi (Periodontal)</option>
+                    <option value="K3">K3 - Kelainan Susunan Gigi dan Rahang (Ortodontik)</option>
+                    <option value="K4">K4 - Kelainan yang Memerlukan Tindakan Bedah</option>
+                    <option value="K5">K5 - Kehilangan Gigi atau Kerusakan Mahkota Gigi</option>
+                    <option value="K6">K6 - Kelainan Rongga Mulut Lainnya</option>
+                </select>
             </div>
         </div>
 
@@ -121,36 +129,42 @@
                 <input type="text" name="diagnosis" class="form-control border-secondary mb-2" placeholder="Nama diagnosis..." style="border-radius: 0;">
                 
                 <div class="mt-2 p-2 border border-secondary" style="border-radius: 0;">
-                    <label class="mb-2 fw-bold text-muted" style="font-size:0.8rem;">Klasifikasi Tindakan C4.5 (Pilih kriteria manual untuk data latih):</label>
+                    <label class="mb-2 fw-bold text-muted" style="font-size:0.8rem;">Kategori Tindakan / Perawatan (Sesuai Klasifikasi C4.5):</label>
                     <div class="row">
                         <div class="col-md-6 mb-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tindakan" value="T1 - Penambalan" id="t1" required>
-                                <label class="form-check-label" for="t1">[ ] Penambalan (T1)</label>
+                                <input class="form-check-input" type="radio" name="tindakan" value="T1" id="t1" required>
+                                <label class="form-check-label" for="t1">T1 - Konservasi</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tindakan" value="T2 - Pencabutan" id="t2">
-                                <label class="form-check-label" for="t2">[ ] Pencabutan (T2)</label>
+                                <input class="form-check-input" type="radio" name="tindakan" value="T2" id="t2">
+                                <label class="form-check-label" for="t2">T2 - Periodonsia</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tindakan" value="T3 - Pembersihan Karang" id="t3">
-                                <label class="form-check-label" for="t3">[ ] Pembersihan (T3)</label>
+                                <input class="form-check-input" type="radio" name="tindakan" value="T3" id="t3">
+                                <label class="form-check-label" for="t3">T3 - Ortodonti</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tindakan" value="T4 - Medikasi" id="t4">
-                                <label class="form-check-label" for="t4">[ ] Medikasi (T4)</label>
+                                <input class="form-check-input" type="radio" name="tindakan" value="T4" id="t4">
+                                <label class="form-check-label" for="t4">T4 - Bedah Mulut</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tindakan" value="T5 - Konservasi" id="t5">
-                                <label class="form-check-label" for="t5">[ ] Konservasi (T5)</label>
+                                <input class="form-check-input" type="radio" name="tindakan" value="T5" id="t5">
+                                <label class="form-check-label" for="t5">T5 - Prostodonsia</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tindakan" value="T6" id="t6">
+                                <label class="form-check-label" for="t6">T6 - Oral Medicine</label>
                             </div>
                         </div>
                     </div>

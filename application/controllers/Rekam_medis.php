@@ -63,8 +63,11 @@ class Rekam_medis extends CI_Controller {
         
         // Handle "Jika Ada, sebutkan" for Riwayat Penyakit
         $riwayat = $post['riwayat_penyakit'];
+        // Riwayat untuk C4.5 tetap 'Ada' atau 'Tidak Ada'
+        // Detail sebutkan disimpan di catatan
+        $catatan = $post['catatan'];
         if ($riwayat === 'Ada' && !empty($post['riwayat_sebutkan'])) {
-            $riwayat = $post['riwayat_sebutkan'];
+            $catatan = 'Riwayat: ' . $post['riwayat_sebutkan'] . ($catatan ? '. ' . $catatan : '');
         }
 
         $insert_data = [
@@ -76,7 +79,7 @@ class Rekam_medis extends CI_Controller {
             'hasil_pemeriksaan' => $post['hasil_pemeriksaan'],
             'diagnosis'         => $post['diagnosis'],
             'tindakan'          => $post['tindakan'],
-            'catatan'           => $post['catatan']
+            'catatan'           => $catatan
         ];
 
         if ($this->rm_model->insert($insert_data)) {

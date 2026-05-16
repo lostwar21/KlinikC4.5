@@ -20,9 +20,9 @@
             <img src="<?php echo base_url('assets/img/logo.png'); ?>" style="width: 80px; filter: grayscale(1);">
         </div>
         <div class="col-10 text-center">
-            <h2 class="fw-black mb-0" style="letter-spacing: -1px; line-height: 1;">PRAKTIK GIGI MANDIRI ESENSIIL</h2>
-            <p class="mb-0 small fw-bold text-teal">MODERN DENTAL CARE</p>
-            <p class="mb-0 x-small text-muted">Jl. Utama No. 88, Malang | Telp: (0341) 123-456</p>
+            <h2 class="fw-black mb-0" style="letter-spacing: -1px; line-height: 1;">RUMAH SAKIT GIGI DAN MULUT USU</h2>
+            <p class="mb-0 small fw-bold text-teal">UNIVERSITAS SUMATERA UTARA</p>
+            <p class="mb-0 x-small text-muted">Jl. Alumni No.2, Kampus USU, Medan | Telp: (061) 8211633</p>
         </div>
     </div>
     <div class="text-center my-4">
@@ -107,8 +107,8 @@
     <div class="row">
         <div class="col-8"></div>
         <div class="col-4 text-center">
-            <p class="mb-0">Malang, <?php echo date('d F Y'); ?></p>
-            <p class="fw-bold mb-5 pb-5">Pimpinan Klinik / Dokter Penanggung Jawab,</p>
+            <p class="mb-0">Medan, <?php echo date('d F Y'); ?></p>
+            <p class="fw-bold mb-5 pb-5">Direktur RSGM USU,</p>
             <p class="fw-bold mb-0">( ............................................ )</p>
             <p class="small text-muted">SIP. 19880101 201501 1 001</p>
         </div>
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             labels: [<?php echo "'" . implode("','", array_column($distribusi_tindakan, 'label')) . "'"; ?>],
             datasets: [{
                 data: [<?php echo implode(",", array_column($distribusi_tindakan, 'value')); ?>],
-                backgroundColor: ['#14b8a6', '#0f172a', '#334155', '#64748b', '#94a3b8'],
+                backgroundColor: ['#14b8a6', '#0f172a', '#334155', '#64748b', '#94a3b8', '#0284c7'],
                 borderWidth: 0
             }]
         };

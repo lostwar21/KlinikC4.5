@@ -1,6 +1,6 @@
 # 📘 DOKUMENTASI SISTEM
 # Klasifikasi Keluhan Rekam Medis Pasien dengan Algoritma C4.5
-### Praktik Gigi Mandiri Esensiil — Modern Dental Care
+### Rumah Sakit Gigi dan Mulut USU
 
 ---
 
@@ -22,7 +22,7 @@
 ## 1. PENDAHULUAN
 
 ### 1.1 Tujuan Sistem
-Sistem ini dibangun untuk membantu **Praktik Gigi Mandiri Esensiil** dalam mengklasifikasikan keluhan pasien secara otomatis menggunakan **Algoritma C4.5 (Decision Tree)**. Sistem mampu:
+Sistem ini dibangun untuk membantu **Rumah Sakit Gigi dan Mulut USU** dalam mengklasifikasikan keluhan pasien secara otomatis menggunakan **Algoritma C4.5 (Decision Tree)**. Sistem mampu:
 - Mengelola data pasien dan rekam medis
 - Melatih model klasifikasi dari data historis
 - Memprediksi tindakan perawatan berdasarkan keluhan baru
@@ -164,7 +164,7 @@ project_skripsi/
 │   └── img/logo.png               # Logo klinik
 │
 ├── system/                        # Core CodeIgniter (JANGAN DIUBAH)
-├── database.sql                   # File SQL untuk membuat database
+├── database.sql                   # File SQL untuk membuat database (SEBAIKNYA DI BACKUP)
 ├── index.php                      # Front controller (entry point)
 └── .htaccess                      # URL rewriting Apache
 ```

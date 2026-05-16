@@ -80,10 +80,7 @@
                 </table>
             </div>
         </div>
-    </div>
-</div>
-            
-            <div class="panel-footer p-3 bg-light border-top">
+            <div class="p-3 bg-light border-top">
                 <small class="text-muted"><i class="fas fa-info-circle me-1"></i> Data di atas adalah data mining yang digunakan oleh mesin C4.5 untuk membangun pohon keputusan.</small>
             </div>
         </div>

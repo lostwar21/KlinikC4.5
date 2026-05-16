@@ -182,8 +182,8 @@
             
             <div class="header-text">
                 <h1>Sistem Klasifikasi</h1>
-                <p class="fw-bold mb-0" style="color:var(--primary-color)">PRAKTIK GIGI MANDIRI ESENSIIL</p>
-                <p class="small text-muted mb-4">Modern Dental Care</p>
+                <p class="fw-bold mb-0" style="color:var(--primary-color)">RUMAH SAKIT GIGI DAN MULUT USU</p>
+                <p class="small text-muted mb-4">Universitas Sumatera Utara</p>
             </div>
 
             <?php if ($this->session->flashdata('error')): ?>

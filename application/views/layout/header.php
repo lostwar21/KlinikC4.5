@@ -22,7 +22,7 @@
         <!-- Sidebar Brand Area (Left side matching sidebar width) -->
         <div class="d-flex align-items-center justify-content-center h-100" style="width: 260px; background-color: white;">
             <img src="<?php echo base_url('assets/img/logo.png'); ?>" alt="Logo" width="40">
-            <h5 class="mb-0 text-dark-teal fw-bold ms-2 mt-1" style="letter-spacing: -1px; line-height: 1;">ESENSIIL<br><span class="small opacity-50">DENTAL</span></h5>
+            <h5 class="mb-0 text-dark-teal fw-bold ms-2 mt-1" style="letter-spacing: -1px; line-height: 1;">RSGM<br><span class="small opacity-50">USU</span></h5>
         </div>
 
         <!-- Main Navbar Content -->
@@ -118,8 +118,8 @@
     <div class="sidebar-footer mt-auto px-3 pb-3 pt-4 border-top">
         <div style="font-size: 0.7rem; opacity: 0.6; line-height: 1.4;">
             &copy; <?php echo date('Y'); ?><br>
-            <strong>PRATIK GIGI MANDIRI ESENSIIL</strong><br>
-            Modern Dental Care
+            <strong>RUMAH SAKIT GIGI DAN MULUT USU</strong><br>
+            Universitas Sumatera Utara
         </div>
     </div>
 </div>
