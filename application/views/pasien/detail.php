@@ -80,8 +80,12 @@
                             </div>
                             <div class="ps-1">
                                 <div class="mb-2">
-                                    <span class="text-muted fw-bold d-block text-uppercase mb-1" style="font-size: 0.65rem;">Keluhan</span>
-                                    <p class="text-dark fw-bold mb-0"><?php echo $h['keluhan_utama']; ?></p>
+                                    <span class="text-muted fw-bold d-block text-uppercase mb-1" style="font-size: 0.65rem;">Keluhan & Catatan Klinis</span>
+                                    <p class="text-dark fw-bold mb-0"><?php echo $h['catatan'] ? $h['catatan'] : $h['keluhan_utama']; ?></p>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="text-muted fw-bold d-block text-uppercase mb-1" style="font-size: 0.65rem;">Riwayat Penyakit</span>
+                                    <p class="text-dark mb-0" style="font-size: 0.85rem;"><?php echo $h['riwayat_penyakit']; ?></p>
                                 </div>
                                 <div class="row g-3">
                                     <div class="col-md-6">

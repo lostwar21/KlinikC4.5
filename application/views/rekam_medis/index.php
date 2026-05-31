@@ -45,7 +45,12 @@
                                 <div class="fw-bold text-dark"><?php echo $h['nama_pasien']; ?></div>
                                 <div class="text-muted small"><?php echo $h['nomor_rm']; ?></div>
                             </td>
-                            <td><?php echo $h['keluhan_utama']; ?></td>
+                            <td>
+                                <div class="text-dark" style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="<?php echo $h['catatan'] ? $h['catatan'] : $h['keluhan_utama']; ?>">
+                                    <?php echo $h['catatan'] ? $h['catatan'] : $h['keluhan_utama']; ?>
+                                </div>
+                                <div class="text-muted small">Riwayat: <?php echo $h['riwayat_penyakit']; ?></div>
+                            </td>
                             <td class="text-muted" style="font-size: 0.9rem;"><?php echo $h['diagnosis'] ?: '-'; ?></td>
                             <td class="text-center">
                                 <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2" style="border-radius: 8px;">
