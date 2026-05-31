@@ -11,14 +11,18 @@ class C45_Model extends CI_Model {
      * Mengambil data latih dari tabel data_latih
      */
     public function get_training_data($id_dataset) {
-        $this->db->where('id_dataset', $id_dataset);
-        $query = $this->db->get('data_latih');
+        $this->db->select('data_latih.*, pasien.nama as nama_pasien');
+        $this->db->from('data_latih');
+        $this->db->join('pasien', 'pasien.id_pasien = data_latih.id_pasien', 'left');
+        $this->db->where('data_latih.id_dataset', $id_dataset);
+        $query = $this->db->get();
         $result = $query->result_array();
 
         $formatted_data = [];
         foreach ($result as $row) {
             $attributes = json_decode($row['nilai_atribut_json'], true);
             $attributes['Target'] = $row['kelas_target'];
+            $attributes['_pasien'] = $row['nama_pasien']; // Simpan nama pasien untuk tree
             $formatted_data[] = $attributes;
         }
 

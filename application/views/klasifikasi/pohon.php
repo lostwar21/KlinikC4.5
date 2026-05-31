@@ -82,20 +82,24 @@
                             if (!function_exists('render_tree_node')) {
                                 function render_tree_node($node, $parent_val = null) {
                                     if ($node['type'] == 'leaf') {
+                                        $patients_json = isset($node['patients']) ? htmlspecialchars(json_encode($node['patients']), ENT_QUOTES, 'UTF-8') : '[]';
                                         echo '<li>';
                                         if ($parent_val !== null) echo '<span class="branch-label">' . $parent_val . '</span>';
-                                        echo '<div class="node leaf-node shadow-sm">';
+                                        echo '<div class="node leaf-node shadow-sm" style="cursor:pointer;" onclick="showPatients(this)" data-patients="'.$patients_json.'">';
                                         echo '<span class="leaf-label">TINDAKAN:</span>';
                                         echo '<strong class="text-white d-block">' . $node['label'] . '</strong>';
                                         echo '<small class="d-block opacity-75 mt-1">(' . $node['count'] . ' kasus)</small>';
+                                        echo '<div class="mt-2 text-info small" style="font-size:0.7rem;"><i class="fas fa-search me-1"></i> Lihat Pasien</div>';
                                         echo '</div>';
                                         echo '</li>';
                                     } else {
+                                        $patients_json = isset($node['patients']) ? htmlspecialchars(json_encode($node['patients']), ENT_QUOTES, 'UTF-8') : '[]';
                                         echo '<li>';
                                         if ($parent_val !== null) echo '<span class="branch-label">' . $parent_val . '</span>';
-                                        echo '<div class="node internal-node shadow-sm">';
+                                        echo '<div class="node internal-node shadow-sm" style="cursor:pointer;" onclick="showPatients(this)" data-patients="'.$patients_json.'">';
                                         echo '<span class="attr-label">Atribut:</span>';
                                         echo '<strong>' . str_replace('_', ' ', $node['attribute']) . '</strong>';
+                                        echo '<div class="mt-2 text-teal small" style="font-size:0.7rem;"><i class="fas fa-search me-1"></i> Lihat ' . $node['count'] . ' Pasien</div>';
                                         echo '</div>';
                                         if (isset($node['branches'])) {
                                             echo '<ul>';
@@ -328,4 +332,62 @@ function downloadTreeImage() {
         });
     }, 300); // 300ms rendering buffer
 }
+
+// Function to show patients list in modal
+function showPatients(element) {
+    const patientsData = element.getAttribute('data-patients');
+    if (!patientsData) return;
+    
+    try {
+        const patients = JSON.parse(patientsData);
+        const modalBody = document.getElementById('patientsModalBody');
+        const modalCount = document.getElementById('patientsModalCount');
+        
+        modalCount.textContent = patients.length + ' Pasien';
+        
+        if (patients.length === 0) {
+            modalBody.innerHTML = '<div class="alert alert-info">Tidak ada data pasien untuk simpul ini.</div>';
+        } else {
+            let html = '<ul class="list-group list-group-flush border" style="border-radius: 8px;">';
+            patients.forEach((name, index) => {
+                html += '<li class="list-group-item px-3 py-2 border-bottom">' + 
+                        '<span class="fw-bold text-muted me-2">' + (index + 1) + '.</span>' + 
+                        '<span class="text-dark">' + name + '</span>' +
+                        '</li>';
+            });
+            html += '</ul>';
+            modalBody.innerHTML = html;
+        }
+        
+        // Show modal
+        const myModal = new bootstrap.Modal(document.getElementById('patientsModal'));
+        myModal.show();
+    } catch (e) {
+        console.error("Gagal parse data pasien:", e);
+    }
+}
 </script>
+
+<!-- Modal Menampilkan Data Pasien -->
+<div class="modal fade" id="patientsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="border-radius:0; border-top: 4px solid var(--primary-teal);">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title fw-bold text-dark-teal">Daftar Pasien pada Simpul</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+            <span class="text-muted fw-bold">Total Record Data:</span>
+            <span class="badge bg-teal fw-bold fs-6" id="patientsModalCount">0 Pasien</span>
+        </div>
+        <div id="patientsModalBody">
+            <!-- List pasien akan di-render di sini -->
+        </div>
+      </div>
+      <div class="modal-footer bg-light">
+        <button type="button" class="btn btn-secondary" style="border-radius:0;" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>

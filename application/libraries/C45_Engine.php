@@ -100,7 +100,8 @@ class C45_Engine {
             return [
                 'type' => 'leaf',
                 'label' => reset($target_values),
-                'count' => $total_records
+                'count' => $total_records,
+                'patients' => array_column($data, '_pasien')
             ];
         }
 
@@ -111,7 +112,8 @@ class C45_Engine {
             return [
                 'type' => 'leaf',
                 'label' => key($counts),
-                'count' => $total_records
+                'count' => $total_records,
+                'patients' => array_column($data, '_pasien')
             ];
         }
 
@@ -135,7 +137,8 @@ class C45_Engine {
             return [
                 'type' => 'leaf',
                 'label' => key($counts),
-                'count' => $total_records
+                'count' => $total_records,
+                'patients' => array_column($data, '_pasien')
             ];
         }
 
@@ -151,6 +154,8 @@ class C45_Engine {
             'type' => 'node',
             'attribute' => $best_attribute,
             'gain_ratio' => $best_gain_ratio,
+            'count' => $total_records,
+            'patients' => array_column($data, '_pasien'),
             'branches' => $branches
         ];
     }
