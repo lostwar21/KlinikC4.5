@@ -17,10 +17,18 @@ class Rekam_medis_model extends CI_Model {
     /**
      * Ambil rekam medis beserta nama pasien (Join)
      */
-    public function get_all() {
+    public function get_all($tanggal_mulai = NULL, $tanggal_selesai = NULL) {
         $this->db->select('rm.*, p.nama as nama_pasien, p.nomor_rm');
         $this->db->from('rekam_medis rm');
         $this->db->join('pasien p', 'p.id_pasien = rm.id_pasien');
+        
+        if (!empty($tanggal_mulai)) {
+            $this->db->where('rm.tanggal_kunjungan >=', $tanggal_mulai);
+        }
+        if (!empty($tanggal_selesai)) {
+            $this->db->where('rm.tanggal_kunjungan <=', $tanggal_selesai);
+        }
+
         $this->db->order_by('rm.tanggal_kunjungan', 'DESC');
         return $this->db->get()->result_array();
     }

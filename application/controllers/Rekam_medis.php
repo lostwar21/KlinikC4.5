@@ -23,7 +23,13 @@ class Rekam_medis extends CI_Controller {
     public function index() {
         $data['title'] = "Rekam Medis";
         $data['active'] = "rekam_medis";
-        $data['histori'] = $this->rm_model->get_all();
+        
+        $tanggal_mulai = $this->input->get('tanggal_mulai');
+        $tanggal_selesai = $this->input->get('tanggal_selesai');
+        
+        $data['tanggal_mulai'] = $tanggal_mulai;
+        $data['tanggal_selesai'] = $tanggal_selesai;
+        $data['histori'] = $this->rm_model->get_all($tanggal_mulai, $tanggal_selesai);
 
         $this->load->view('layout/header', $data);
         $this->load->view('rekam_medis/index', $data);

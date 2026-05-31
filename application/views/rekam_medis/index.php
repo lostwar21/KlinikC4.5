@@ -1,4 +1,4 @@
-<div class="row mb-5">
+<div class="row mb-4">
     <div class="col-12 d-flex justify-content-between align-items-center">
         <h3 class="fw-bold text-dark-teal mb-0">HISTORI REKAM MEDIS</h3>
         <a href="<?php echo site_url('rekam_medis/tambah'); ?>" class="btn btn-primary d-flex align-items-center px-4 py-2" style="border-radius: 10px; background-color: var(--primary-teal); border: none;">
@@ -6,6 +6,64 @@
         </a>
     </div>
 </div>
+
+<!-- Filter Panel -->
+<div class="panel mb-4">
+    <div class="d-flex align-items-center mb-3">
+        <div class="p-2 rounded-3 me-2" style="background-color: rgba(13, 148, 136, 0.1); color: var(--primary-teal);">
+            <i class="fas fa-filter"></i>
+        </div>
+        <h5 class="fw-bold text-dark-teal mb-0" style="font-size: 1rem;">Filter Tanggal Berobat</h5>
+    </div>
+    <form method="GET" action="<?php echo site_url('rekam_medis'); ?>" class="row g-3 align-items-end">
+        <div class="col-md-4">
+            <label for="tanggal_mulai" class="form-label small fw-semibold text-secondary mb-1">Tanggal Mulai</label>
+            <div class="input-group">
+                <span class="input-group-text bg-light text-secondary border-end-0" style="border-radius: 8px 0 0 8px;"><i class="far fa-calendar-alt"></i></span>
+                <input type="date" class="form-control border-start-0" id="tanggal_mulai" name="tanggal_mulai" value="<?php echo isset($tanggal_mulai) ? $tanggal_mulai : ''; ?>" style="border-radius: 0 8px 8px 0;">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="tanggal_selesai" class="form-label small fw-semibold text-secondary mb-1">Tanggal Selesai</label>
+            <div class="input-group">
+                <span class="input-group-text bg-light text-secondary border-end-0" style="border-radius: 8px 0 0 8px;"><i class="far fa-calendar-alt"></i></span>
+                <input type="date" class="form-control border-start-0" id="tanggal_selesai" name="tanggal_selesai" value="<?php echo isset($tanggal_selesai) ? $tanggal_selesai : ''; ?>" style="border-radius: 0 8px 8px 0;">
+            </div>
+        </div>
+        <div class="col-md-4 d-flex gap-2">
+            <button type="submit" class="btn btn-primary flex-grow-1 py-2 fw-semibold d-flex align-items-center justify-content-center" style="border-radius: 8px; background-color: var(--primary-teal); border: none; height: 38px;">
+                <i class="fas fa-search me-2"></i> Filter
+            </button>
+            <?php if(!empty($tanggal_mulai) || !empty($tanggal_selesai)): ?>
+                <a href="<?php echo site_url('rekam_medis'); ?>" class="btn btn-light border py-2 fw-semibold d-flex align-items-center justify-content-center" style="border-radius: 8px; height: 38px;">
+                    <i class="fas fa-sync-alt me-2"></i> Reset
+                </a>
+            <?php endif; ?>
+        </div>
+    </form>
+</div>
+
+<!-- Active Filter Status -->
+<?php if(!empty($tanggal_mulai) || !empty($tanggal_selesai)): ?>
+    <div class="alert alert-info border-0 shadow-sm mb-4 d-flex align-items-center justify-content-between" style="border-radius: 12px; background-color: #e0f2f1; color: var(--dark-teal); font-size: 0.9rem;">
+        <div class="d-flex align-items-center">
+            <i class="fas fa-info-circle fs-5 me-2"></i>
+            <span>
+                Menampilkan data rekam medis dari tanggal 
+                <strong>
+                    <?php echo !empty($tanggal_mulai) ? date('d/m/Y', strtotime($tanggal_mulai)) : 'Awal'; ?>
+                </strong> 
+                s/d 
+                <strong>
+                    <?php echo !empty($tanggal_selesai) ? date('d/m/Y', strtotime($tanggal_selesai)) : 'Akhir'; ?>
+                </strong> 
+                (Ditemukan: <strong><?php echo count($histori); ?></strong> data)
+            </span>
+        </div>
+        <a href="<?php echo site_url('rekam_medis'); ?>" class="btn-close" style="font-size: 0.8rem; filter: invert(34%) sepia(21%) saturate(2421%) hue-rotate(130deg) brightness(92%) contrast(85%);" aria-label="Close"></a>
+    </div>
+<?php endif; ?>
+
 
 <?php if($this->session->flashdata('success')): ?>
     <div class="alert alert-success alert-dismissible fade show mb-4 border-0 shadow-sm" role="alert" style="border-radius: 12px; background-color: #d1fae5; color: #065f46;">
